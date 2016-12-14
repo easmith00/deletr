@@ -41,5 +41,5 @@ def timeCalc(root, att):
         duration = datetime.timedelta(days=0)
         return duration
 
-
-main()
+if __name__ == "__main__"
+    main()
