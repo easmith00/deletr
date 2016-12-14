@@ -8,6 +8,7 @@ import win32con
 import win32event
 import win32evtlogutil
 import os, sys, string, time
+import deleter
 
 
 class aservice(win32serviceutil.ServiceFramework):
@@ -44,8 +45,10 @@ class aservice(win32serviceutil.ServiceFramework):
                 # Ok, here's the real money shot right here.
                 # [actual service code between rests]
                 try:
-                    file_path = "deleter.py"
-                    execfile(file_path)  # Execute the script
+                    deleter.main()
+                    '''commented below in case above change breaks scripts'''
+                    # file_path = "deleter.py"
+                    # execfile(file_path)  # Execute the script
 
                     #inc_file_path2 = "C:\whereever\MORE_REAL_py_work_to_be_done.py"
                     #execfile(inc_file_path2)  # Execute the script
